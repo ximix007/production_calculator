@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import './components/ResourceTable';
+import MaterialTable from './components/ResourceTable';
+import ResourceTable from './components/ResourceTable';
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        <ResourceTable></ResourceTable>
       </header>
     </div>
   );

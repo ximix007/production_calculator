@@ -16,10 +16,11 @@ class Recipe {
     }
 
     RequiredResource(resultCount){
-        let result = Object();
-        require.forEach(element => {
-            result.defineProperty(element.resource, element.count * resultCount);
+        let result = [];
+        this.required.forEach(element => {
+            result.push({resource: element.resource, count: element.count * resultCount});
         });
+        return result;
     }
 }
 

@@ -12,7 +12,7 @@ class Recipe {
     }
 
     GetProperty(propertyName){
-        return properties[propertyName];
+        return this.properties[propertyName];
     }
 
     RequiredResource(resultCount){

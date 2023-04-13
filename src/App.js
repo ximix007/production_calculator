@@ -1,10 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import './components/ResourceTable';
-import MaterialTable from './components/ResourceTable';
-import ResourceTable from './components/ResourceTable';
+import Resource from './model/Craft/Resource.js';
+import Recipe from './model/Craft/Recipe.js';
+import CraftingCalcTreeNode from './model/Craft/CraftingCalcTreeNode.js';
+
 
 function App() {
+  let x = new Resource("x", {});
+  let y = new Resource("y", {});
+  let z = new Resource("z", {});
+  let recipe = new Recipe(x, [{resource: y, count:2}, {resource: z, count:3}], {});
+  let root = new CraftingCalcTreeNode(x, 3);
+  //root.expandRecipe(recipe);
   return (
     <div className="App">
       <header className="App-header">
@@ -20,8 +28,7 @@ function App() {
         >
           Learn React
         </a>
-        <ResourceTable></ResourceTable>
-      </header>
+        </header>
     </div>
   );
 }

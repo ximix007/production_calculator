@@ -5,7 +5,7 @@ class Resource {
     }
 
     GetProperty(propertyName){
-        return properties[propertyName];
+        return this.properties[propertyName];
     }
 
     GetName(){

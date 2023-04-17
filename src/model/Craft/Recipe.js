@@ -7,14 +7,6 @@ class Recipe {
         this.properties = properties;
     }
 
-    GetRequired(){
-        return this.required;
-    }
-
-    GetProperty(propertyName){
-        return this.properties[propertyName];
-    }
-
     RequiredResource(resultCount){
         let result = [];
         this.required.forEach(element => {

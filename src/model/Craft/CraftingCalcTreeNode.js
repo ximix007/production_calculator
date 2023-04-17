@@ -7,7 +7,7 @@ class CraftingCalcTreeNode{
         this.count = count;
         this.child = [];
     }
-
+    
     expandRecipe(recipe){
         if(recipe.result != this.resource){
             throw new Error("Recipe not suitable");

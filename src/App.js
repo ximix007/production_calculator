@@ -4,7 +4,7 @@ import './components/ResourceTable';
 import Resource from './model/Craft/Resource.js';
 import Recipe from './model/Craft/Recipe.js';
 import CraftingCalcTreeNode from './model/Craft/CraftingCalcTreeNode.js';
-import { CraftCalcSheet } from './components/CraftSheet';
+import { CraftSheet } from './components/CraftSheet/CraftSheet';
 
 function App() {
   let x = new Resource("x", {});
@@ -17,22 +17,11 @@ function App() {
   let root = new CraftingCalcTreeNode(x, 3);
   root.expandRecipe(recipe);
   root.child[1].expandRecipe(recipe2);
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <CraftCalcSheet rootNode = {root}></CraftCalcSheet>
+        <CraftSheet rootNode = {root}></CraftSheet>
         </header>
     </div>
   );

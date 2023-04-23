@@ -5,7 +5,6 @@ import { ResourceCell } from "./ResourceCell";
 export class CraftSheet extends React.Component{
     constructTable(nodes){
         let nextRowNodes = nodes.reduce((acum, cur) => acum.concat(cur.child), []);
-        console.log(nextRowNodes);
         if (nextRowNodes.length === 0){
             return <tr>{nodes.map(x => <ResourceCell node = {x}/>)}</tr>
         }
@@ -17,7 +16,7 @@ export class CraftSheet extends React.Component{
     render(){
         return <table style = {craftSheetStyle}>
             <tbody>
-                {this.constructTable([this.props.rootNode])}
+                {this.constructTable([this.props.rootNode.filledNullNodes()])}
             </tbody>
         </table>
     }

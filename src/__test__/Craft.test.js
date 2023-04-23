@@ -54,3 +54,14 @@ test('maxChildOnLayer', () => {
     root.child[1].expandRecipe(recipe2);
     expect(root.maxChildOnLayer()).toBe(4);
 })
+
+test('not dublicate crafting resource', () => {
+    let x = new Resource("x", {});
+    let y = new Resource("y", {});
+    let z = new Resource("z", {});
+    let recipe = new Recipe(x, [{resource: y, count:2}, {resource: z, count:3}], {});
+    let root = new CraftingCalcTreeNode(x, 3);
+    root.expandRecipe(recipe);
+    root.expandRecipe(recipe);
+    expect(root.child).toStrictEqual([new CraftingCalcTreeNode(y, 6), new CraftingCalcTreeNode(z, 9)]);
+})

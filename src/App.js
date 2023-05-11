@@ -1,9 +1,9 @@
 import './App.css';
-import './components/ResourceTable';
 import Resource from './model/Craft/Resource.js';
 import Recipe from './model/Craft/Recipe.js';
 import CraftingCalcTreeNode from './model/Craft/CraftingCalcTreeNode.js';
 import { CraftSheet } from './components/CraftSheet/CraftSheet';
+import { ResourceInput } from './components/ResourseInput/ResourceInput'; 
 
 function App() {
   let x = new Resource("x", {});
@@ -20,12 +20,12 @@ function App() {
   root.expandRecipe(recipe);
   //root.child[0].expandRecipe(recipe3);
   root.child[1].expandRecipe(recipe2);
-  console.log(root);
   
   return (
     <div className="App">
       <header className="App-header">
         <CraftSheet rootNode = {root}></CraftSheet>
+        <ResourceInput UpdateResources = {(x) => console.log(x)}></ResourceInput>
         </header>
     </div>
   );

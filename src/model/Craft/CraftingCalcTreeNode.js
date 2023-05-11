@@ -45,7 +45,6 @@ class CraftingCalcTreeNode{
         let nullnode = new CraftingCalcTreeNode(nullResource, "   ")
         let treeHeight = this.treeHeight();
         const recurcion = (x, node) => {
-            console.log([node, node.child, node.child.length]);
             if(node.child.length === 0 && x < treeHeight-1){
                 node.child = [nullnode.clone()];
             }
